@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  h1, h2, h3 { @apply font-display tracking-tight; }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-gold { @apply btn bg-gold text-navy-900 hover:bg-gold-light; }
+  .btn-ghost { @apply btn border border-white/15 text-white hover:border-gold hover:text-gold; }
+  .btn-danger { @apply btn border border-red-400/40 text-red-300 hover:bg-red-500/10; }
+  .card { @apply rounded-xl border border-white/10 bg-navy-800/80 p-5 shadow-lg shadow-black/20; }
+  .input {
+    @apply w-full rounded-md border border-white/15 bg-navy-900 px-3 py-2 text-sm text-white placeholder:text-white/30 focus:border-gold focus:outline-none;
+  }
+  .label { @apply mb-1 block text-xs font-medium uppercase tracking-wider text-white/60; }
+  .badge { @apply inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium; }
+  .alert-error { @apply rounded-md border border-red-400/40 bg-red-500/10 px-3 py-2 text-sm text-red-200; }
+  .alert-ok { @apply rounded-md border border-emerald-400/40 bg-emerald-500/10 px-3 py-2 text-sm text-emerald-200; }
+}
+
+@media print {
+  body { background: #fff !important; color: #000 !important; }
+  .no-print { display: none !important; }
+}
